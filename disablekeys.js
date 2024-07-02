@@ -1,3 +1,5 @@
+// X-88 note: This code does not belong to me, this was extracted from https://chromewebstore.google.com/detail/lockdown-browser/fogjeanjfbiombghnmkmmophfeccjdki?pli=1 source code
+
 window.addEventListener("contextmenu", function(e) {
     e.preventDefault();
 });
