@@ -8,10 +8,32 @@
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <p>I have integrated Performance Matter's test locking feature using <a href="https://chromewebstore.google.com/detail/lockdown-browser/fogjeanjfbiombghnmkmmophfeccjdki?pli=1">Lockdown Browser's</a> source code to find any exploit</p>
+    <p>This is a test site to experiment on Performance Matter's Test Locking, this is not Performance Matter's code</p>
     <p>You are not allowed to right click, go to another tab, copy and more</p>
-    <script src="disablekeys.js"></script>
-    <script src="disablescreen.js"></script>
-    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        <script>
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+    });
+
+    let tabs = true;
+
+    function check() {
+        tabs = !document.hidden;
+        if (!tabs) {
+            alert('Test Lock Warning Initiated.');
+        }
+    }
+
+    document.addEventListener('visibilitychange', check);
+
+    document.addEventListener('mouseout', function(event) {
+        if (!event.relatedTarget && !event.toElement) {
+            setTimeout(check, 200);
+        }
+    });
+
+  </script>
+    </script>
   </body>
 </html>
